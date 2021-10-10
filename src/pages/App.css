@@ -1,0 +1,48 @@
+#App {
+  text-align: center;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  z-index: 11;
+  height: 48px;
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  background: rgb(0, 106, 166);
+}
+
+.header-left {
+  display: flex;
+  padding: 0 16px;
+  max-width: 50%;
+  flex: 1 0;
+}
+
+.header-left img {
+  height: 28px;
+}
+
+.header-left .search-bar {
+  flex: 1;
+  margin-left: 16px;
+  padding: 0px 8px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 50, 78, 0.4);
+}
+
+.header-left .search-bar::placeholder {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+main {
+  margin: 48px auto;
+  padding: 30px 60px 0 60px;
+  width: 728px;
+}

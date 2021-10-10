@@ -1,0 +1,48 @@
+.card-loding {
+  height: auto;
+  padding: 0 60px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.card-loding > div {
+  width: 100%;
+  padding: 20px 0px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 82px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    'header header'
+    'title thumbnail'
+    'excerpt thumbnail'
+    'footer thumbnail';
+}
+
+.card-loding > div * {
+  background-color: rgb(200, 200, 200, 0.2);
+  border-radius: 6px;
+  height: 24px;
+}
+
+.card-loding > div .header {
+  grid-area: header;
+}
+
+.card-loding > div .title {
+  grid-area: title;
+}
+
+.card-loding > div .excerpt {
+  grid-area: excerpt;
+}
+
+.card-loding > div .thumbnail {
+  grid-area: thumbnail;
+  width: 100%;
+  height: 100%;
+}
+
+.card-loding > div .footer {
+  grid-area: footer;
+}
