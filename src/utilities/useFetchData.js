@@ -1,20 +1,25 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
+
+function reducer(state, action) {
+  const idRecord = [...new Set(state.map((i) => i.id))]
+  return [...state, ...action.filter((i) => !idRecord.includes(i.id))]
+}
 
 const useFetchData = (query) => {
   const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState([])
+  const [data, dispatch] = useReducer(reducer, [])
 
   useEffect(() => {
     async function fetchData() {
-      setIsLoading(true)
       try {
+        setIsLoading(true)
         const response = await axios({
           url: 'http://localhost:8080/',
           params: query ? { popular: true, before: query } : { popular: true },
           mode: 'cors',
         })
-        setData((pre) => [...pre, ...response.data])
+        dispatch(response.data)
         setIsLoading(false)
       } catch (e) {
         console.error(e)
