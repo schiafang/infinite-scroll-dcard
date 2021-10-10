@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `Download or Clone`
 
 ```
-git clone git@github.com:schiafang/infinite-scroll-dcard.git
+git clone git@github.com:schiafang/infinite-scroll-dcard.git && cd infinite-scroll-dcard
 ```
 
 ### `Start CORS-Server`
